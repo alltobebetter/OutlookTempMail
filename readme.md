@@ -2,6 +2,8 @@
 
 **Lomail是一个临时邮箱/个人邮箱，向下阅读使用方式**
 
+正在制作，内测开放，connect with reply@baiduplay.ml
+
 > 临时邮箱
 
 使用任何以lounges.gq为后缀的邮箱，这些邮箱都会定发送到一个login@lounges.ga账户，您可以通过outlook登录这个起始邮箱，您可以访问 https://email.lounges.gq 以了解账户信息和密码
