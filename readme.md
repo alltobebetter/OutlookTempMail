@@ -6,13 +6,13 @@
 
 访问 https://outlook.com 登入以下信息：
 
-用户名 login@lounges.gq
+用户名 login@loungemail.eu.org
 
-密码 lounge123
+密码 lounge123456
 
 此刻，您就有获得了一个您接收邮箱的容器啦！
 
-接下来，您可以自定义 name@lounges.gq 邮件，**name为您的任意合法字母名称**，例如abcdefg@lounges.gq 接下来，邮件就会在outlook账户中获取，您就会在账户中看到您的**接收电子邮件**了
+接下来，您可以自定义 name@lounge.eu.org 邮件，**name为您的任意合法字母名称**，例如abcdefg@lounges.gq 接下来，邮件就会在outlook账户中获取，您就会在账户中看到您的**接收电子邮件**了
 
 也就是说，任何以lounges.gq结尾的邮件都会发送至此outlook账户，因此，此outlook账户为公共账户，我们尽量使其账户稳定运行，如果更换容器用户名，我们会第一时间发布在本官网上，推荐您下载LoMail手机应用
 
