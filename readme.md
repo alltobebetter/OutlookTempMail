@@ -1,8 +1,10 @@
-# Welcome LoMail！
+# 欢迎来到OutlookTempMail
 
-简单，小众，隐私的的临时邮箱及实际/定向邮箱 XD
+简单，小众，隐私的的临时邮箱。基于Outlook作为容器。
 
-> ## **临时邮箱**
+如果您有更多需求，可以联系我：alltobebetter@outlook.com
+
+## 登入临时邮箱
 
 访问 https://outlook.com 登入以下信息：
 
@@ -12,46 +14,60 @@
 
 此刻，您就有获得了一个您接收邮箱的容器啦！
 
-接下来，您可以自定义 name@loungemail.eu.org 邮件，**name为您的任意合法字母名称**，例如abcdefg@loungemail.eu.org 接下来，邮件就会在outlook账户中获取，您就会在账户中看到您的**接收电子邮件**了
+## 接收邮件
 
-也就是说，任何以loungemail.eu.org结尾的邮件都会发送至此outlook账户，因此，此outlook账户为公共账户，我们尽量使其账户稳定运行，如果更换容器用户名，我们会第一时间发布在本官网上，推荐您下载LoMail手机应用
+接下来，您可以**自定义** `xxx@loungemail.eu.org` 邮件，**xxx为任意值**，例如`abcdefg@loungemail.eu.org` 接下来，邮件就会在此outlook账户中获取，您就会在账户中看到您的**邮件**了！
 
-> F&Q
+也就是说，任何以loungemail.eu.org结尾的邮件都会发送至此outlook账户，因此，此outlook账户为公共账户，我们尽量使其账户稳定运行。
 
-Q.为什么不使用Get直接将邮件爬取在网站上？
+## 发送邮件
 
-A.在实际操作中，这将是一件很大的工程（对于服务器来说），我们推荐用户自建Python爬取邮件内容等，如果我们将此工程应用到exe和apk文件上，代码量会远远高于Python文件量，基于速度的安全性的要求，用户自建Python（如果有能力）是一个很好的选择
+尽管发送邮件不完全自由，但是我们为您绑定了几个邮件服务名称：
 
-Q.我的个人信息会被泄露吗？
+login@loungemail.eu.org
 
-A.完全不会，甚至Outlook供应商也不会记录到您的个人信息，因为Lounges提供了双重定向
+butimhere@outlook.com
 
+howusay@outlook.com
 
-> ## 注册一个准Lounges账户
+publicmail@loungemail.eu.org
 
-此功能暂时为内测功能，请联系reply@baiduplay.ml
+thisislounge@outlook.com
 
-> ## 定向账户
+在发件时，您可以使用这些别名来发件。
 
-您可以使lounges.gq后缀的某一电子邮件地址发送到您的电子邮件上，您需要接收一个验证码，请留言register@lounges.gq
+## 无法接收邮件的邮箱
 
-格式为：您的电子邮件+您要注册的电子邮件名称
+这些邮箱包括个人邮箱（已经被注册的）和官方邮箱
 
-> ## 无法定向（占用）邮件
+login@loungemail.eu.org（但是您可以用来发件）
 
-```
-login@lounges.gq
-register@lounges.gq
-```
+admin@loungemail.eu.org
 
-> ## Python爬取代码
+su@loungemail.eu.org
+
+## 问题合集
+
+> Q.为什么不使用Get直接将邮件爬取在网站上？
+
+A.在实际操作中，这将是一件很大的工程（对于服务器来说），我们推荐用户自建Python爬取邮件内容等，如果我们将此工程应用到exe和apk文件上，代码量会远远高于Python文件量，基于速度的安全性的要求，用户自建Python（如果有能力）是一个很好的选择。
+
+> Q.我的个人信息会被泄露吗？
+
+A.完全不会，甚至Outlook供应商也不会记录到您的个人信息，因为邮箱提供了双重定向，即您的账户受到Loungemail以及您自身的双重保护，没有人知道您是谁。
+
+## 注册一个私人账户
+
+即创建一个别人无法使用的账户仅为您所用，请联系admin@loungemail.eu.org
+
+## Python爬取代码
 
 ```
 import imaplib , email , os
  
 imapserver = 'outlook.office365.com'
-emailuser = "bill@outlook.com"
-emailpasswd = "billpasswd"
+emailuser = "login@loungemail.eu.org"
+emailpasswd = "lounge123456"
  
 attachementdir=r"d:\a"  #附件存放的位置
  
@@ -105,6 +121,7 @@ for id in mailidlist:
  
 conn.logout()
 ```
-> 守则
 
-请勿进行违法操作，您的违规操作本站概不负责，如果您恶意删除或进行容器绑定等，后果将自负
+## 守则
+
+请勿进行违法操作，您的违规操作本站概不负责，如果您恶意删除或进行容器绑定等，后果将自负。
