@@ -1,5 +1,7 @@
 # 欢迎来到OutlookTempMail
 
+**再次提醒：login@loungemail.eu.org，admin@loungemail.eu.org，su@loungemail.eu.org这几个特殊邮件地址是无法接收邮件的！**
+
 简单，小众，隐私的的临时邮箱。基于Outlook作为容器。
 
 如果您有更多需求，可以联系我：alltobebetter@outlook.com
