@@ -24,10 +24,6 @@
 
 也就是说，任何以loungemail.eu.org结尾的邮件都会发送至此outlook账户，因此，此outlook账户为公共账户，我们尽量使其账户稳定运行。
 
-## 捐助我（硬核广告）
-![支付宝](https://i.gyazo.com/c4856f567e7bc3c8d04ae69c0d15766e.jpg "支付宝")
-![微信支付](https://i.gyazo.com/1cb49a4543186f6324afe4a809681145.png "微信支付")
-
 ## 发送邮件
 
 尽管发送邮件不完全自由，但是我们为您绑定了几个邮件服务名称：
@@ -68,67 +64,9 @@ A.完全不会，甚至Outlook供应商也不会记录到您的个人信息，�
 
 即创建一个别人无法使用的账户仅为您所用，请联系admin@loungemail.eu.org
 
-## Python爬取代码
 
-```
-import imaplib , email , os
- 
-imapserver = 'outlook.office365.com'
-emailuser = "login@loungemail.eu.org"
-emailpasswd = "lounge123456"
- 
-attachementdir=r"d:\a"  #附件存放的位置
- 
-conn = imaplib.IMAP4_SSL(imapserver)
-conn.login(emailuser,emailpasswd)
- 
-conn.list()     #列出邮箱中所有的列表，如：收件箱、垃圾箱、草稿箱。。。
- 
-conn.select('INBOX')    #选择收件箱（默认）
- 
-result , dataid = conn.uid ( 'search' , None , "ALL" )
- 
-mailidlist = dataid[0].split ()       #转成标准列表,获得所有邮件的ID
- 
-# 解析邮件内容
-def get_body(msg):
-    if msg.is_multipart ():
-        return get_body ( msg.get_payload ( 0 ) )
-    else:
-        return msg.get_payload ( None , decode=True )
-     
-#search('FROM','abc@outlook.com',conn)  根据输入的条件查找特定的邮件
-def search(key,value,conn):
-    result , data = conn.search(None,key,'"()"'.format(value))
-    return data
- 
-#获取附件
-def get_attachements(msg):
-    for part in msg.walk():
-        if part.get_content_maintype() == 'multipart':
-            continue
-        if part.get('Content-Disposition') is None:
-            continue
-        filename = part.get_filename()
- 
-        if bool(filename):
-            filepath = os.path.join(attachementdir,filename)
-            with open(filepath,'wb') as f:
-                f.write(part.get_payload(decode=True))
- 
- 
-for id in mailidlist:
-    result , data = conn.fetch ( id , '(RFC822)' )  # 通过邮件id获取邮件
-    e = email.message_from_bytes ( data[0][1] )
-    subject = email.header.make_header ( email.header.decode_header ( e['SUBJECT'] ) )
-    mail_from = email.header.make_header ( email.header.decode_header ( e['From'] ) )
-    print("邮件的subject是%s" % subject)
-    print("邮件的发件人是%s" % mail_from)
-    body = str ( get_body ( e ) , encoding='utf-8' )    # utf-8 gb2312 GB18030解析中文日文英文
-    print("邮件内容是%s" % body)
- 
-conn.logout()
-```
+## 捐助项目
+![支付宝](https://i.gyazo.com/c4856f567e7bc3c8d04ae69c0d15766e.jpg "支付宝")  ![微信支付](https://i.gyazo.com/1cb49a4543186f6324afe4a809681145.png "微信支付")
 
 ## 守则
 
