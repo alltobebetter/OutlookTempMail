@@ -14,7 +14,7 @@
 
 用户名 login@loungemail.eu.org
 
-密码 lounge#123456
+密码 lounge*123456
 
 此刻，您就有获得了一个您接收邮箱的容器啦！
 
