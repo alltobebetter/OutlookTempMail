@@ -1,6 +1,6 @@
 # Lounge Mail Viewer 使用指南
 
-Lounge Mail Viewer 是一个专为查询 `loungemail.eu.org` 域名下邮件的在线工具。您可以通过网页界面或API方式查询邮件。
+Lounge Mail Viewer 是一个在线的临时邮箱工具。您可以通过网页界面或API方式查询邮件。
 
 ## 网页使用方式
 
