@@ -1,73 +1,77 @@
-# 欢迎来到OutlookTempMail
+# Lounge Mail Viewer 使用指南
 
-商务联系，朋友联系请su@loungemail.eu.org
+Lounge Mail Viewer 是一个专为查询 `loungemail.eu.org` 域名下邮件的在线工具。您可以通过网页界面或API方式查询邮件。
 
-**再次提醒：login@loungemail.eu.org，admin@loungemail.eu.org，su@loungemail.eu.org这几个特殊邮件地址是无法接收邮件的！**
+## 网页使用方式
 
-简单，小众，隐私的的临时邮箱。基于Outlook作为容器。
+### 如何访问
 
-如果您有更多需求，可以联系我：alltobebetter@outlook.com
+[点击这里](https://www.loungemail.eu.org/)
 
-## 登入临时邮箱
+### 基本功能
+- **直接查询**：输入邮箱前缀即可查看最新三封邮件
+- **随机邮箱**：一键生成随机邮箱前缀并查询
+- **实时显示**：邮件内容包含发件人、主题、日期等信息
 
-访问 https://outlook.com 登入以下信息：
+### 使用步骤
+1. 在左侧输入框中输入邮箱前缀（如：`abc` 将查询 `abc@loungemail.eu.org`）
+2. 点击"查询"按钮或按回车键
+3. 在右侧查看邮件内容
+4. 也可以点击"随机"按钮生成随机邮箱进行查询
 
-用户名 login@loungemail.eu.org
+## API 使用方式
 
-密码 lounge*123456
+### 基本请求
+```http
+GET /api/{email_prefix}?pass={get-by-connect-me}
+```
+- `{email_prefix}`: 要查询的邮箱前缀
+- `pass`: 验证参数，您需要联系 me@supage.eu.org 获取
 
-此刻，您就有获得了一个您接收邮箱的容器啦！
+### 响应格式
+```json
+[
+  {
+    "from": "sender@example.com",
+    "subject": "邮件主题",
+    "date": "Wed, 20 Mar 2024 10:00:00 +0800",
+    "content": "邮件内容"
+  }
+]
+```
 
-## 接收邮件
+### 示例
+查询 `abc@loungemail.eu.org` 的邮件：
+```bash
+curl "https://your-domain.com/api/abc?pass={get-by-connect-me}"
+```
 
-接下来，您可以**自定义** `xxx@loungemail.eu.org` 邮件，**xxx为任意值**，例如`abcdefg@loungemail.eu.org` 接下来，邮件就会在此outlook账户中获取，您就会在账户中看到您的**邮件**了！
+### 错误响应
+- 密码错误：`{"error": "Invalid password"}`
+- 未找到邮件：`[]`
+- 其他错误：`{"error": "错误信息"}`
 
-也就是说，任何以loungemail.eu.org结尾的邮件都会发送至此outlook账户，因此，此outlook账户为公共账户，我们尽量使其账户稳定运行。
+## 注意事项
 
-## 发送邮件
+- 本工具仅支持查询 `loungemail.eu.org` 域名下的邮件
+- 每次查询最多返回最新的3封邮件
+- 请勿用于非法用途
+- API请求需要包含正确的 `pass` 参数
 
-尽管发送邮件不完全自由，但是我们为您绑定了几个邮件服务名称：
+## 常见问题
 
-login@loungemail.eu.org
+**Q: 为什么查询不到邮件？**
+- 确保邮箱前缀正确
+- 确认该邮箱是否有收到邮件
+- 检查是否有网络连接问题
 
-butimhere@outlook.com
+**Q: API 请求返回错误？**
+- 检查 `pass` 参数是否正确
+- 确认请求格式是否正确
+- 查看错误信息获取具体原因
 
-howusay@outlook.com
+## 联系方式
 
-publicmail@loungemail.eu.org
+如遇问题，可通过以下方式联系：
 
-thisislounge@outlook.com
-
-在发件时，您可以使用这些别名来发件。
-
-## 无法接收邮件的邮箱
-
-这些邮箱包括个人邮箱（已经被注册的）和官方邮箱
-
-login@loungemail.eu.org（但是您可以用来发件）
-
-admin@loungemail.eu.org
-
-su@loungemail.eu.org
-
-## 问题合集
-
-> Q.为什么不使用Get直接将邮件爬取在网站上？
-
-A.在实际操作中，这将是一件很大的工程（对于服务器来说），我们推荐用户自建Python爬取邮件内容等，如果我们将此工程应用到exe和apk文件上，代码量会远远高于Python文件量，基于速度的安全性的要求，用户自建Python（如果有能力）是一个很好的选择。
-
-> Q.我的个人信息会被泄露吗？
-
-A.完全不会，甚至Outlook供应商也不会记录到您的个人信息，因为邮箱提供了双重定向，即您的账户受到Loungemail以及您自身的双重保护，没有人知道您是谁。
-
-## 注册一个私人账户
-
-即创建一个别人无法使用的账户仅为您所用，请联系admin@loungemail.eu.org
-
-
-## 捐助项目
-![支付宝](https://i.gyazo.com/c4856f567e7bc3c8d04ae69c0d15766e.jpg "支付宝")  ![微信支付](https://i.gyazo.com/1cb49a4543186f6324afe4a809681145.png "微信支付")
-
-## 守则
-
-请勿进行违法操作，您的违规操作本站概不负责，如果您恶意删除或进行容器绑定等，后果将自负。
+me@supage.eu.org
